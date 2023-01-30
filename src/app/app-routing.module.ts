@@ -13,7 +13,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'search/:searchTerm', component: HomeComponent},
+<<<<<<< HEAD
   { path: 'products/:id', component:ProductPageComponent},
+=======
+>>>>>>> ec3a7a43bcd84e7124cd7ea1ffee59f259234958
   //{ path: 'about', component: AboutComponent },
   //{ path: 'contact', component: ContactComponent },
   //{ path: 'contactus', redirectTo: 'contact' },
