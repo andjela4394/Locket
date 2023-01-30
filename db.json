@@ -11,11 +11,22 @@
       "password": "nika"
     }
   ],
-  "comments": [
+  "products": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Aurora",
+      "image": "/assets/images/photo1.jpg",
+      "category": "bracelet",
+      "type": "silver",
+      "price": 126
+    },
+    {
+      "id": 2,
+      "name": "Aedon",
+      "image": "/assets/images/photo1.jpg",
+      "category": "necklace",
+      "type": "gold",
+      "price": 78
     }
   ],
   "profile": {

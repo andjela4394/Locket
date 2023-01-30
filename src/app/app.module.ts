@@ -9,6 +9,7 @@ import { AuthService } from './services/auth.service';
 import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { ApiService } from './services/api.service';
 
 
 
@@ -20,7 +21,7 @@ import { HeaderComponent } from './components/header/header.component';
         LoginComponent,
         HeaderComponent
     ],
-    providers: [AuthService],
+    providers: [AuthService, ApiService],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
