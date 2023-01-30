@@ -11,6 +11,7 @@ import { AUTH_PROVIDERS } from './services/auth.service';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'search/:searchTerm', component: HomeComponent},
   //{ path: 'about', component: AboutComponent },
   //{ path: 'contact', component: ContactComponent },
   //{ path: 'contactus', redirectTo: 'contact' },

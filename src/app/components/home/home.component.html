@@ -1,1 +1,22 @@
-<p>home works!</p>
+<app-search></app-search>
+<ul>
+    <li *ngFor="let product of products">
+        <a>
+         <img src="{{product.image}}" alt="">
+         <div class="content">
+            <div class="name">
+                {{product.name}}
+            </div>
+            <div class="category">
+                {{product.category}}
+                {{product.type}}
+            </div>
+            <div class="price">
+                <span>
+                    {{product.price|currency}}
+                </span>
+            </div>
+         </div>
+        </a>
+    </li>
+</ul>
