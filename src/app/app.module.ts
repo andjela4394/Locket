@@ -10,7 +10,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { ApiService } from './services/api.service';
-
+import { SearchComponent } from './components/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,14 +20,16 @@ import { ApiService } from './services/api.service';
         ProtectedComponent,
         HomeComponent,
         LoginComponent,
-        HeaderComponent
+        HeaderComponent,
+        SearchComponent
     ],
     providers: [AuthService, ApiService],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule
     ]
 })
 export class AppModule { }

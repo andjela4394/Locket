@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Product } from '../shared/models/Product';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,19 @@ export class ApiService {
       return res;
     }))
   }
+
+  getSearchProduct(): Promise<Product[]> {
+    return new Promise((resolve, reject) => {
+      this.http.get<Product[]>("http://localhost:3000/products").pipe(map((res: Product[]) => {
+        resolve(res);
+      })).subscribe(
+        error => {
+          reject(error);
+        }
+      );
+    });
+  }
+
   updateProduct(data : any, id: number){
     return this.http.put<any>("http://localhost:3000/products"+"/"+id,data).pipe(map((res:any)=>{
       return res;
