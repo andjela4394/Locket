@@ -12,10 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ApiService } from './services/api.service';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
 import { ProductPageComponent } from './components/product-page/product-page.component';
-=======
->>>>>>> ec3a7a43bcd84e7124cd7ea1ffee59f259234958
 
 
 @NgModule({
@@ -25,12 +22,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
         HomeComponent,
         LoginComponent,
         HeaderComponent,
-<<<<<<< HEAD
         SearchComponent,
         ProductPageComponent
-=======
-        SearchComponent
->>>>>>> ec3a7a43bcd84e7124cd7ea1ffee59f259234958
     ],
     providers: [AuthService, ApiService],
     bootstrap: [AppComponent],
