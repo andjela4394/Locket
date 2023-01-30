@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 *{
     box-sizing: border-box;
@@ -13,6 +14,7 @@ body{
     margin: 0;
     font-family: "Roboto Slab", sans-serif;
     font-size: 18px;
+    background-color: #F3E0EC;
 }
 
 a{

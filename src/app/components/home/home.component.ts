@@ -19,11 +19,16 @@ export class HomeComponent implements OnInit{
           this.products = res.filter((product: any) => product.name.toLowerCase().includes(params.searchTerm.toLowerCase()));
     })
     else
-    this.products = this.getAllProducts();
+    this.products = this.getProducts();
   })
 
   }
 
+  getProducts(): void {
+    this.api.getProduct()
+    .subscribe(products => this.products = products);
+    }
+    
   getAllProducts(){
     this.api.getProduct().subscribe(res=>{
       this.products = res;

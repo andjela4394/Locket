@@ -1,0 +1,30 @@
+<div class="container" *ngIf="productData">
+    <img src="{{productData.image}}" alt="Slika">
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{productData.name}}
+            </span>
+        </div>
+        <div class="tags">
+            <span class="category">
+                {{productData.category}}
+            </span>
+            <span class="type">
+                {{productData.type}}
+            </span>
+        </div>
+        <div class="desc">
+            <span>
+                {{productData.desc}}
+            </span>
+        </div>
+        <div class="price">
+            <span>
+                {{productData.price|currency}}
+            </span>
+        </div>
+
+        <button>Add To Cart</button>
+    </div>
+</div>

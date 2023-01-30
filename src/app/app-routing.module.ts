@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ProtectedComponent } from './components/protected/protected.component';
 import { LoggedInGuard } from './logged-in.guard';
 import { AUTH_PROVIDERS } from './services/auth.service';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'search/:searchTerm', component: HomeComponent},
+  { path: 'products/:id', component:ProductPageComponent},
   //{ path: 'about', component: AboutComponent },
   //{ path: 'contact', component: ContactComponent },
   //{ path: 'contactus', redirectTo: 'contact' },

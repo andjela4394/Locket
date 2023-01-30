@@ -5,4 +5,5 @@ export class Product{
     category!: string;
     type!: string;
     price!: number;
+    desc!: string;
 }

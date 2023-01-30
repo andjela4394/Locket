@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ApiService } from './services/api.service';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
         HomeComponent,
         LoginComponent,
         HeaderComponent,
-        SearchComponent
+        SearchComponent,
+        ProductPageComponent
     ],
     providers: [AuthService, ApiService],
     bootstrap: [AppComponent],

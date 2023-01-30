@@ -2,24 +2,33 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Product } from '../shared/models/Product';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+  }
+
+  private dbUrl = "http://localhost:3000/products";
 
   postProduct(data : any){
     return this.http.post<any>("http://localhost:3000/products", data).pipe(map((res:any)=>{
       return res;
     }))
   }
-  getProduct(){
-    return this.http.get<any>("http://localhost:3000/products").pipe(map((res:any)=>{
-      return res;
-    }))
+
+  getProduct(): Observable<Product[]>{
+    return this.http.get<Product[]>(this.dbUrl);
   }
+
+  getProductById(id: number): Observable<Product> {
+    const url = `${this.dbUrl}/${id}`
+    return this.http.get<Product>(url)
+    }
+    
 
   getSearchProduct(): Promise<Product[]> {
     return new Promise((resolve, reject) => {
