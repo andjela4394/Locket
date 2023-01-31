@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Product } from 'src/app/shared/models/Product';
+import { Store } from '@ngrx/store';
+import { addProduct } from 'src/app/cart-state-store/cart.action';
 
 @Component({
   selector: 'app-product-page',
@@ -12,7 +14,7 @@ export class ProductPageComponent implements OnInit{
 
   productData: undefined | Product;
 
-  constructor(private activeRoute:ActivatedRoute, private api:ApiService){}
+  constructor(private activeRoute:ActivatedRoute, private api:ApiService, private store:Store){}
 
   ngOnInit(): void {
     let productId = this.activeRoute.snapshot.paramMap.get('id');
@@ -21,6 +23,10 @@ export class ProductPageComponent implements OnInit{
       console.warn(result);
       this.productData = result;
     })
+  }
+
+  public buyProducts(product:Product){
+    this.store.dispatch(addProduct(product))
   }
 
 }

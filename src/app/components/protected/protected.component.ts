@@ -43,7 +43,7 @@ export class ProtectedComponent implements OnInit {
     this.protectedModelObj.image = this.formValue.value.image;
     this.protectedModelObj.category = this.formValue.value.category;
     this.protectedModelObj.material = this.formValue.value.material;
-    this.protectedModelObj.price = this.formValue.value.price;
+    this.protectedModelObj.price = Number(this.formValue.value.price);
     this.protectedModelObj.desc = this.formValue.value.desc;
 
     this.api.postProduct(this.protectedModelObj).subscribe(res=>{
@@ -90,7 +90,7 @@ export class ProtectedComponent implements OnInit {
     this.protectedModelObj.image = this.formValue.value.image;
     this.protectedModelObj.category = this.formValue.value.category;
     this.protectedModelObj.material = this.formValue.value.material;
-    this.protectedModelObj.price = this.formValue.value.price;
+    this.protectedModelObj.price = Number(this.formValue.value.price);
     this.protectedModelObj.desc = this.formValue.value.desc;
     this.api.updateProduct(this.protectedModelObj, this.protectedModelObj.id).subscribe(res=>{
       alert("Updated successfuly");

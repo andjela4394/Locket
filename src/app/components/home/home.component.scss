@@ -4,7 +4,7 @@ ul{
     align-items: center;
     flex-wrap: wrap;
     list-style-type: none;
-    padding: 0;
+    padding: 0px;
 }
 
 ul li a{
@@ -16,11 +16,12 @@ ul li a{
     display: flex;
     flex-direction: column;
     //overflow: hidden;
-    color: violet;
+    color: purple;
+    margin-bottom: 120px;
 }
 
 .category{
-    font-size: small;
+    font-size: smaller;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,5 +52,17 @@ li{
     position: absolute;
     top: 25.5rem;
     right: 0;
+    background-color:purple;
+	border-radius:28px;
+	border:none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:15px;
+	padding:10px 31px;
+	text-decoration:none;
 }
 
+.add-to-cart:hover{
+    opacity: 0.8;
+}

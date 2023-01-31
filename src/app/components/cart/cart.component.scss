@@ -14,6 +14,8 @@
   .action-button {
     border: 0;
     background-color: thistle;
+    border-radius: 10rem;
+    margin: 10px;
   }
   
   .action-button:hover {
@@ -23,10 +25,15 @@
   .action-button:active {
     background-color: purple;
   }
+
+  #actions{
+    margin-bottom: 15px;
+  }
   
   .price{
     float: right;
     padding: 10px;
+    margin-top: 10px;
 }
   .clear-button {
     float: right;

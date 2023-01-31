@@ -4,6 +4,6 @@ export class ProtectedModel{
     image : string = '';
     category : string = '';
     material : string = '';
-    price : number =0;
+    price : number = 0;
     desc : string = '';
 }

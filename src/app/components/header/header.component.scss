@@ -1,11 +1,11 @@
 header{
-    background: white;
+    background: whitesmoke;
     padding: 0;
     border-bottom: 1px solid purple;
 }
 
 a{
-    color: violet;
+    color: purple;
 }
 
 a:hover{
@@ -21,7 +21,8 @@ a:hover{
 
 a.logo{
     font-weight: bold;
-    padding: 1em;
+    font-size: larger;
+    padding-top: 20px;
 }
 
 nav ul{

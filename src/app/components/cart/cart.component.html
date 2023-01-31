@@ -1,8 +1,9 @@
 <app-header></app-header>
 <div class="cart-entries-container">
-    <div>
+    <div id="actions">
         <span class="price">Total Price: {{ totalPrice$ | async | currency}}</span>
       <button class="clear-button action-button" (click)="clearEntries()">REMOVE ALL</button>
+      <button class="clear-button action-button" (click)="clearEntries()">BUY ALL</button>
     </div>
     <div *ngFor="let entry of ( cartEntries$ | async )" class="cart-entry">
       <div class="space"></div>
