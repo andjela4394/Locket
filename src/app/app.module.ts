@@ -13,7 +13,9 @@ import { ApiService } from './services/api.service';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { ProductPageComponent } from './components/product-page/product-page.component';
-
+import { CartComponent } from './components/cart/cart.component';
+import { cartReducer, metaReducerLocalStorage } from './cart-state-store/cart.reducer';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
     declarations: [
@@ -23,7 +25,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
         LoginComponent,
         HeaderComponent,
         SearchComponent,
-        ProductPageComponent
+        ProductPageComponent,
+        CartComponent
     ],
     providers: [AuthService, ApiService],
     bootstrap: [AppComponent],
@@ -31,7 +34,8 @@ import { ProductPageComponent } from './components/product-page/product-page.com
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        StoreModule.forRoot({ cartEntries: cartReducer}, { metaReducers: [metaReducerLocalStorage]})
     ]
 })
 export class AppModule { }

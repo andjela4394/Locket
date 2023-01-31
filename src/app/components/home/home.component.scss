@@ -42,3 +42,13 @@ li a:hover{
     opacity: 0.9;
     cursor: pointer;
 }
+
+li{
+    position: relative;
+}
+
+.add-to-cart{
+    position: absolute;
+    top: 25.5rem;
+    right: 0;
+}
