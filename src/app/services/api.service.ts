@@ -13,9 +13,16 @@ export class ApiService {
   }
 
   private dbUrl = "http://localhost:3000/products";
+  private dbUsers = "http://localhost:3000/users";
 
   postProduct(data : any){
-    return this.http.post<any>("http://localhost:3000/products", data).pipe(map((res:any)=>{
+    return this.http.post<any>(this.dbUrl, data).pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
+  postUser(data : any){
+    return this.http.post<any>(this.dbUsers, data).pipe(map((res:any)=>{
       return res;
     }))
   }
@@ -32,7 +39,7 @@ export class ApiService {
 
   getSearchProduct(): Promise<Product[]> {
     return new Promise((resolve, reject) => {
-      this.http.get<Product[]>("http://localhost:3000/products").pipe(map((res: Product[]) => {
+      this.http.get<Product[]>(this.dbUrl).pipe(map((res: Product[]) => {
         resolve(res);
       })).subscribe(
         error => {
@@ -43,12 +50,12 @@ export class ApiService {
   }
 
   updateProduct(data : any, id: number){
-    return this.http.put<any>("http://localhost:3000/products"+"/"+id,data).pipe(map((res:any)=>{
+    return this.http.put<any>(this.dbUrl+"/"+id,data).pipe(map((res:any)=>{
       return res;
     }))
   }
   deleteProduct(id : number){
-    return this.http.delete<any>("http://localhost:3000/products"+"/"+id).pipe(map((res:any)=>{
+    return this.http.delete<any>(this.dbUrl+"/"+id).pipe(map((res:any)=>{
       return res;
     }))
   }

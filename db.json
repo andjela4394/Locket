@@ -2,13 +2,35 @@
   "users": [
     {
       "id": 1,
+      "firstName": "Andjela",
+      "lastName": "Glisic",
       "username": "ana",
-      "password": "ana"
+      "password": "ana",
+      "isAdmin": "true"
     },
     {
       "id": 2,
+      "firstName": "Nikola",
+      "lastName": "Glisic",
       "username": "nika",
-      "password": "nika"
+      "password": "nika",
+      "isAdmin": "false"
+    },
+    {
+      "id": 3,
+      "firstName": "Katarina",
+      "lastName": "Tomic",
+      "username": "kaca",
+      "password": "kaca",
+      "isAdmin": "false"
+    },
+    {
+      "id": 4,
+      "firstName": "Vanja",
+      "lastName": "Maksimovic",
+      "username": "vanja",
+      "password": "vanja",
+      "isAdmin": "false"
     }
   ],
   "products": [
@@ -16,19 +38,28 @@
       "id": 1,
       "name": "Aurora",
       "image": "/assets/images/photo1.jpg",
-      "category": "bracelet",
-      "material": "silver",
-      "price": 126,
+      "category": "Bracelet",
+      "material": "Silver",
+      "price": 124,
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sintoccaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
       "id": 2,
       "name": "Aedon",
       "image": "/assets/images/photo1.jpg",
-      "category": "necklace",
-      "material": "gold",
+      "category": "Necklace",
+      "material": "Gold",
       "price": 78,
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sintoccaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 3,
+      "name": "Jasmin",
+      "image": "/assets/images/photo1.jpg",
+      "category": "Earing",
+      "material": "Gold",
+      "price": 246,
+      "desc": "Lorem ipsum"
     }
   ],
   "profile": {

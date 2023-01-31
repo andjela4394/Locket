@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import { addProduct } from 'src/app/cart-state-store/cart.action';
 import { ProductInt } from 'src/app/shared/models/ProductInt';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -46,4 +47,5 @@ export class HomeComponent implements OnInit{
   public buyProducts(product:Product){
     this.store.dispatch(addProduct(product))
   }
+
 }

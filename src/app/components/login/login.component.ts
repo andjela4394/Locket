@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { AuthService } from "src/app/services/auth.service";
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from "src/app/services/auth.service";
 })
 export class LoginComponent {
   message: string;
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService, public router:Router) {
     this.message = '';
   }
   
@@ -21,8 +22,9 @@ export class LoginComponent {
       setTimeout(function () {
         self.message = '';
       }.bind(this), 2500);
-        // navigate to the home page
+        
     }
+    this.router.navigateByUrl('/home');
     return false;
 }
 

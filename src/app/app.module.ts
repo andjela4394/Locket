@@ -11,11 +11,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { ApiService } from './services/api.service';
 import { SearchComponent } from './components/search/search.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { CartComponent } from './components/cart/cart.component';
 import { cartReducer, metaReducerLocalStorage } from './cart-state-store/cart.reducer';
 import { StoreModule } from '@ngrx/store';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { StoreModule } from '@ngrx/store';
         HeaderComponent,
         SearchComponent,
         ProductPageComponent,
-        CartComponent
+        CartComponent,
+        SignupComponent
     ],
     providers: [AuthService, ApiService],
     bootstrap: [AppComponent],
@@ -34,6 +36,7 @@ import { StoreModule } from '@ngrx/store';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
+        ReactiveFormsModule,
         FormsModule,
         StoreModule.forRoot({ cartEntries: cartReducer}, { metaReducers: [metaReducerLocalStorage]})
     ]

@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { ProtectedComponent } from './components/protected/protected.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { LoggedInGuard } from './logged-in.guard';
 import { AUTH_PROVIDERS } from './services/auth.service';
 
@@ -12,15 +13,12 @@ import { AUTH_PROVIDERS } from './services/auth.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'search/:searchTerm', component: HomeComponent},
-  { path: 'products/:id', component:ProductPageComponent},
-  { path: 'cart', component:CartComponent},
-  //{ path: 'about', component: AboutComponent },
-  //{ path: 'contact', component: ContactComponent },
-  //{ path: 'contactus', redirectTo: 'contact' },
-  // provera korisnika
+  { path: 'home', component: HomeComponent , canActivate: [LoggedInGuard]},
+  { path: 'search/:searchTerm', component: HomeComponent, canActivate: [LoggedInGuard]},
+  { path: 'products/:id', component:ProductPageComponent, canActivate: [LoggedInGuard]},
+  { path: 'cart', component:CartComponent, canActivate: [LoggedInGuard]},
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component:SignupComponent},
   {
     path: 'protected',
     component: ProtectedComponent,

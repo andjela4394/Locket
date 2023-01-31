@@ -14,6 +14,7 @@ export class AuthService {
             for (const user of data) {
                 if (user.username === username && user.password === password) {
                     localStorage.setItem('username', username);
+                    localStorage.setItem('isAdmin', user.isAdmin);
                     resolve(true);
                     break;
                 }
@@ -30,8 +31,15 @@ export class AuthService {
   getUser(): any {
     return localStorage.getItem('username');
   }
+  getAdmin():any{
+    console.log(localStorage.getItem('isAdmin'));
+    return localStorage.getItem('isAdmin');
+  }
   isLoggedIn(): boolean {
     return this.getUser() !== null;
+  }
+  isAdmin(): boolean {
+    return this.getAdmin() == "true";
   }
 }
 

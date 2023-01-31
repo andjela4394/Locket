@@ -2,9 +2,15 @@
     <div class="container"> 
         <a href="#" routerLink="/home" class="logo">Locket</a>
         <nav>
-            <ul>
+            <ul *ngIf="isLoggedIn">
+                <li *ngIf="isAdmin">
+                    <a href="#" routerLink="/protected" class="protected">Admin Panel</a>
+                </li>
                 <li>
                     <a href="#" routerLink="/cart" class="counter">Cart({{ countProducts$ | async }})</a>
+                </li>
+                <li>
+                    <a href="#" class="counter" (click)="logout()">Logout</a>
                 </li>
             </ul>
         </nav>
