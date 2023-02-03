@@ -1,9 +1,12 @@
 <app-header></app-header>
 <div class="cart-entries-container">
-    <div id="actions">
+    <div id="actions" *ngIf="(totalPrice$ | async) != 0">
         <span class="price">Total Price: {{ totalPrice$ | async | currency}}</span>
       <button class="clear-button action-button" (click)="clearEntries()">REMOVE ALL</button>
       <button class="clear-button action-button" (click)="clearEntries()">BUY ALL</button>
+    </div>
+    <div *ngIf="(totalPrice$ | async) == 0">
+      Cart is empty!
     </div>
     <div *ngFor="let entry of ( cartEntries$ | async )" class="cart-entry">
       <div class="space"></div>
@@ -20,10 +23,10 @@
         <div class="detail-button-row">
           <div class="space"></div>
           <div>
-            <button class="action-button detail-button" (click)="more(entry)">+</button>
+            <button class="action-button detail-button" (click)="less(entry)">-</button>
           </div>
           <div>
-            <button class="action-button detail-button" (click)="less(entry)">-</button>
+            <button class="action-button detail-button" (click)="more(entry)">+</button>
           </div>
         </div>
       </div>

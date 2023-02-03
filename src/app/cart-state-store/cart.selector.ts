@@ -6,6 +6,7 @@ export interface ProductGroup{
     count: number;
 }
 
+
 export const selectCountProducts = createSelector(
     createFeatureSelector('cartEntries'),
     (state: ProductInt[]) => {
@@ -39,4 +40,5 @@ export const selectGroupCartEntries = createSelector(
         const sortedMap = new Map([...map.entries()].sort());
         return Array.from(sortedMap.values());
     }
-)
+);
+

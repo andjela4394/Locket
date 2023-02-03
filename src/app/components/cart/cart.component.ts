@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { addProduct, clearCart, removeProduct } from 'src/app/cart-state-store/cart.action';
 import { ProductGroup, selectGroupCartEntries, selectTotalPrice } from 'src/app/cart-state-store/cart.selector';
+import { AuthService } from "src/app/services/auth.service";
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,7 @@ export class CartComponent implements OnInit{
   cartEntries$: Observable<ProductGroup[]>;
   totalPrice$: Observable<number>;
 
-  constructor(private store:Store){
+  constructor(private store:Store, private authService: AuthService){
     this.cartEntries$ = store.select(selectGroupCartEntries);
     this.totalPrice$ = store.select(selectTotalPrice);
   }
