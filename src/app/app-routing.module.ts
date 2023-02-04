@@ -23,20 +23,13 @@ const routes: Routes = [
     path: 'protected',
     component: ProtectedComponent,
     canActivate: [LoggedInGuard]
-  },
-  /*{
-    path: 'products',
-    component: ProductsComponent,
-    children: childRoutes
-    }*/
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: [
-    // sklonite ovo za "hash-bang" rutiranje
-    // { provide: LocationStrategy, useClass: HashLocationStrategy }
     AUTH_PROVIDERS,
     LoggedInGuard
     ],
